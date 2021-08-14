@@ -25,6 +25,15 @@
     cursor: pointer;
 }
 
+.submit-button {
+    background: linear-gradient(to bottom, rgb(230, 113, 171), rgb(233, 0, 163));
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 9px 25px;
+    cursor: pointer;
+}
+
 .categories img {
     width: 100px;
 }
