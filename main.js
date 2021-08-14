@@ -1,29 +1,29 @@
 const firstHeadings = document.getElementsByTagName('h1')
 
-for (const heading of firstHeadings){
+for (const heading of firstHeadings) {
     heading.style.color = 'steelblue';
 }
 
 const cards = document.getElementsByClassName('card');
 
-for (const card of cards){
+for (const card of cards) {
     card.style.borderRadius = '25px';
 }
 
 const buyButtons = document.getElementsByClassName('buy-now-button');
 
-for (const button of buyButtons){
-    button.addEventListener('click', function(event){
+for (const button of buyButtons) {
+    button.addEventListener('click', function (event) {
         event.target.parentNode.removeChild(event.target);
     });
 }
 
 const emailField = document.getElementById('email-field');
-emailField.addEventListener('keyup', function(event){
-    
+emailField.addEventListener('keyup', function (event) {
+
     const submitButton = document.getElementById('form-submit-btn');
-    
-    if (event.target.value == 'email'){
+
+    if (event.target.value == 'email') {
         submitButton.classList.add('submit-button');
         submitButton.removeAttribute('disabled');
     }
@@ -36,14 +36,18 @@ emailField.addEventListener('keyup', function(event){
 
 const cardImages = document.getElementsByClassName('card-images');
 
-for (const image of cardImages){
-    image.addEventListener('mouseover', function(event){
-        event.target.src = 'images/categories/watch.png';
+for (const image of cardImages) {
+    const currentImageSrc = image.getAttribute('src')
+    image.addEventListener('mouseover', function (event) {
+        event.target.src = 'images/good-choice.png';
+    });
+    image.addEventListener('mouseout', function(event){
+        event.target.src = currentImageSrc;
     });
 }
 
-document.getElementById('subscribe').addEventListener('dblclick', function(event){
+document.getElementById('subscribe').addEventListener('dblclick', function (event) {
     const bgColors = ['steelblue', 'green', 'coral', 'salmon', 'Chocolate', 'DarkOliveGreen', 'DarkSlateGrey', 'red'];
-    const randomIndex = Math.floor(Math.random()* bgColors.length);
+    const randomIndex = Math.floor(Math.random() * bgColors.length);
     event.target.style.backgroundColor = bgColors[randomIndex];
 });
